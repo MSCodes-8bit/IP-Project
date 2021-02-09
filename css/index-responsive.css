@@ -1,0 +1,95 @@
+/*----------------MEDIA QUERIES-------------------*/
+
+@media only screen and (max-width: 414px) {
+	.nav-logo {
+		font-size: 3rem;
+	}
+	.nav-menu-btn-cont {
+		width: 3rem;
+		height: 3rem;
+		top: 0.75rem;
+		right: 1.25rem;
+	}
+	.hamburger {
+		top: 0.5rem !important;
+		right: 0 !important;
+	}
+	.hamburger--emphatic {
+		right: 3px !important;
+	}
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+		width: 25px !important;
+	}
+	.hero-title {
+		font-size: 4rem;
+	}
+	.hero-banner {
+		padding: 0 2rem;
+		top: 30%;
+	}
+	.play {
+		width: 16.5rem;
+		height: 4rem;
+		margin-left: 0.5rem;
+	}
+	.img1, .img2, .img3, .img4, .img5, .img6 {
+		background-attachment: initial;
+		background-position-x: 67%;
+	}
+	.minimal:hover .img-overlay {
+		visibility: hidden;
+	}
+	.minimal:hover .img1 {
+		transform: none;
+	}
+	.minimal:hover .img2 {
+		transform: none;
+	}
+	.minimal:hover .img3 {
+		transform: none;
+	}
+	.minimal:hover .img4 {
+		transform: none;
+	}
+	.minimal:hover .img5 {
+		transform: none;
+	}
+	.minimal:hover .img6 {
+		transform: none;
+	}
+	.map-context {
+		height: 20vh;
+	}
+	.clip-text {
+		font-size: 3em;
+		margin: 0 !important;
+		padding: 0.5em 0 0 0;
+		height: 5em;
+	}
+	.map {
+		height: 20vh;
+	}
+	.test-head{
+		font-size: 2rem;
+	}
+	.hi-prev, .hi-next {
+		display: none;
+	}
+	.testimonial-box-cont {
+		justify-content: flex-start;
+		padding: 0 4rem;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.img1 .img2 .img3 .img4 .img5 .img6 {
+		background-attachment: fixed;
+	}
+	.test-head{
+		font-size: 5rem;
+	}
+	.testimonial-box-cont {
+		justify-content: center;
+		padding: 2rem;
+	}
+}

@@ -1,0 +1,127 @@
+* {
+	margin: 0;	
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Exo', sans-serif;
+	transition: all 0.1s ease;
+}
+html {
+	width: 100vw;
+	overflow-x: hidden;
+	left:0;
+}
+body {
+	perspective: 1px;
+	transform-style: preserve-3d;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100vh;
+	z-index: 2;
+	/*background: url("../img/hero-america-3.jpg");*/
+}
+@font-face {
+  font-family: 'Cormorant';
+  src: url('fonts/CormorantSC-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.info-main-container {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	background: #ccc;
+	justify-content: center;
+	align-items: center;
+}
+.info-container {
+	display: flex;
+	background: #fff;
+	width: 70vw;
+	height: 70vh;
+	border: none;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+}
+.form-title {
+	display: flex;
+	justify-content: center;
+	font-size: 40px;
+	position: absolute;
+	top: 17%;
+	/*text-decoration: underline;*/
+	border-bottom: 3px solid #00a4ef;
+	color: #00a4ef;
+}
+.fields-container {
+	display: block;
+	width: 85%;
+	height: 80%;
+	margin-top: 2rem;
+	/*background: #fc0;*/
+}
+.q-container {
+	display: flex;
+	width: 100%;
+	height: 25%;
+	/*background: #F25022;*/
+	border-bottom: 2px solid #4444;
+	margin: 1rem 0;
+}
+.label-container {
+	display: flex;
+	width: 30%;
+	height: 100%;
+	/*align-items: center;*/
+}
+.label {
+	left: 0;
+	font-size: 26px;
+	color: #00A4EF;
+	height: 100%;
+	width: 100%;
+}
+.input-container {
+	display: block;
+	width: 70%;
+	height: 100%;
+	/*background: #7FBA00;*/
+	padding: 4px;
+	justify-content: initial;
+	overflow: hidden;
+}
+.select-box {
+	float: left;
+	display: flex;
+	/*height: 2em;*/
+	background: #fff;
+	font-size: 20px;
+	border: 2px solid #00A4EF;
+	border-radius: 3px;
+	color: #00a4ef;
+	padding: 0.5rem 2rem;
+	/*width: 6em;*/
+	justify-content: center;
+	margin: 0 0.2em 0.2em 0;
+	transition: 0.5s ease;
+	text-rendering: antialiased;
+}
+.select-box:hover {
+	background: #00a4ef;
+	color: #fff;
+}
+.submit-btn {
+	display: flex;
+	justify-content: center;
+	font-size: 22px;
+	position: absolute;
+	padding: 1rem 5rem;
+	bottom: 20%;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	background: #00a4ef;
+	color: #fff;
+}

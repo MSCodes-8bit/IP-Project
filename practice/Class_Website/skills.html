@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Info</title>
+	<link rel="stylesheet" href="/css/skills.css">
+	<link rel="stylesheet" href="/css/input.css">
+	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+</head>
+<body>
+	<header class="nav-bar" id="nav-name">
+		<!-- NAV NAME WORKING -->
+		<!-- <span class="nav-logo">america</span> -->
+		
+		<!-- <button class="fas fa-bars nav-menu-btn" id="menu" onclick="menu_open()"></button> -->
+	</header>
+	<!-- <div class="nav-decoy" id="menu-block"></div> -->
+	
+	<section class="info-main-container">
+		<div class="info-container">
+			<div class="form-title">Skills Form</div>
+			<div class="fields-container">
+				<div class="q-container">
+					<div class="label-container">
+					<label class="label">Programming Languages:</label>
+					</div>
+					<div class="input-container">
+						<label class="select-box" id="p1" onclick="change(this.id)">HTML</label>
+						<label class="select-box" id="p2" onclick="change(this.id)">CSS</label>
+						<label class="select-box" id="p3" onclick="change(this.id)">Javascript</label>
+						<label class="select-box" id="p4" onclick="change(this.id)">Python</label>
+						<label class="select-box" id="p5" onclick="change(this.id)">Ruby</label>
+
+						<label class="select-box" id="p6" onclick="change(this.id)">HTML</label>
+						<label class="select-box" id="p7" onclick="change(this.id)">CSS</label>
+						<label class="select-box" id="p8" onclick="change(this.id)">Javascript</label>
+						<label class="select-box" id="p9" onclick="change(this.id)">Python</label>
+						<label class="select-box" id="p10" onclick="change(this.id)">Ruby</label>
+					</div>
+				</div>
+				<div class="q-container">
+					<div class="label-container">
+					<label class="label">Projects:</label>
+					</div>
+					<div class="input-container">
+						<!-- ********************************************************** -->
+						<label for="inp" class="inp">
+						  <textarea type="textarea" rows=3 id="projects" placeholder="&nbsp;"></textarea>
+						  <span class="label1">Project</span>
+						  <span class="border"></span>
+						</label>
+					</div>
+				</div>
+				<div class="q-container">
+					<div class="label-container">
+					<label class="label">Hobbies</label>
+					</div>
+					<div class="input-container">
+						<!-- <input type="text" class="input-box"> -->
+						<label for="inp" class="inp">
+						  <textarea type="textarea" rows=3 id="hobbies" placeholder="&nbsp;"></textarea>
+						  <span class="label1">Hobbies</span>
+						  <span class="border"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<button class="submit-btn" onclick="submit()">Submit</button>		
+		</div>
+	</section>
+
+
+	<footer class="last">
+		
+	</footer>
+
+</body>
+<!-- <script type="text/javascript">
+	// $("#menu").click(function() {
+ //  	$('.nav-menu-btn').toggleClass('nav-menu');
+	// });
+
+	// var menu = document.getElementById("menu-block");
+	// var btn = document.getElementById("menu");
+
+	// btn.onclick = function() {
+	function menu_open() {
+		// debugger;
+		var ch = document.getElementById("menu-block");
+		// var ch = document.querySelector("div.nav-decoy");
+
+  		if (ch.className == "nav-decoy") {
+		ch.className = "nav-menu";
+		}
+		else {
+  		ch.className = "nav-decoy";
+  		}	
+  	}
+
+  	// $(".mininal").mousemove(function(e) {
+  	// 	parallaxIt(e, ".img-overlay", -100);
+  	// 	parallaxIt(e, ".img1", -30);
+  	// });
+
+  	// function parallaxIt(e, target, movement) {
+  	// 	var $this = $(".minimal");
+  	// 	var relX = e.pageX - $this.offset().left;
+  	// 	var relY = e.pageY - $this.offset().top;
+
+  	// 	TweenMax.to(target, 1, {
+  	// 		x: (relX - $this.width() / 2 ) / $this.width() * movement,
+  	// 		y: (relY - $this.height() / 2) / $this.height() * movement
+  	// 	});
+  	// }
+  	var country;
+  	function dataFeedPlace () {
+  		var ca;
+	  	function getCookie(cname) {
+			  var name = cname + "=";
+			  var decodedCookie = decodeURIComponent(document.cookie);
+			  ca = decodedCookie.split(';');
+			  for(var i = 0; i < ca.length; i++) {
+			    var c = ca[i];
+			    while (c.charAt(0) == ' ') {	
+			      c = c.substring(1);
+			    }
+			    if (c.indexOf(name) == 0) {
+			      return c.substring(name.length, c.length);
+			    }
+			  }
+			  return "";
+			}
+	  	var fileName = getCookie("place");
+	  	country = getCookie("country");
+  		const request = new XMLHttpRequest();
+  		request.open("get", "data/"+fileName+"/"+fileName+".json");
+  		// request.open("get", "data/place-america.json");
+  		request.onload = () => {
+  			// try {
+  				const json = JSON.parse(request.responseText);
+  				populatePlace(json);
+  			// }
+  			// catch (e) {
+  				// console.warn("Error: :_(");
+  			// }
+  		};
+
+  		request.send();
+  	}
+  	// const loc = window.location.href;
+  	// loc.substring(0, str.lastIndexOf("/"));
+  	// alert(loc);
+  	function populatePlace(json) {
+	  		// console.log(json.length);
+  		const loc = window.location.href;
+  		const path = loc.substring(0, loc.lastIndexOf("/"));
+
+  		const heroImage = document.getElementById('hero-image');
+  		heroImage.innerHTML += '<div class="hero"><div class="nav-decoy" id="menu-block"></div><div class="hero-banner" id="hero-tagline"></div></div>';
+
+  		var heroBack = window.getComputedStyle(document.querySelector ('.hero'), ':before').getPropertyValue('background');
+
+  		// heroBack = 'rgba(0, 0, 0, 0) url("'+path+'/img/'+json[0][0]+'") repeat scroll 0% 0% / cover padding-box border-box;';
+ 		heroBack = 'url("'+path+'/img/'+country+'/'+json[0][1]+'/'+json[0][0]+'");'
+  		// console.log(heroBack);
+
+  		// window.getComputedStyle(document.querySelector ('.hero'), ':before').setProperty("background",""+heroBack+"");
+
+  		document.styleSheets[0].insertRule('.hero:before { background: '+heroBack+'; }', 0);
+
+
+  		const navName = document.getElementById('nav-name');
+  		navName.innerHTML += '<span class="nav-logo">'+json[0][1]+'</span>';
+
+  		const heroTagLine = document.getElementById('hero-tagline');
+  		heroTagLine.innerHTML += '<h1 class="hero-title">'+json[0][2]+'</h1>';
+
+  		const heading = document.getElementById('heading');
+  		heading.innerHTML += '<div class="help-banner clip-text">Make Best Outta '+json[0][1]+' !!</div>';
+
+  		// document.styleSheets[0], "body:after", "background: "+heroBack+"";
+
+  		}
+
+  		//----------------DISPLAYING CARDS
+
+  		// for (var i = 0; i < json.length; i++) {
+  		// 	placeDiv.innerHTML += '<button class="minimal"><div class="img"><img class="place" id="place-img-'+i+'"></img><div class="info"><div class="p-name"><span>'+json[i][1]+'</span></div><div class="desc"><span>'+ json[i][2] +'</span></div></div></div></button>';
+  		// 	document.getElementById("place-img-"+i).style.background = "url('img/" + json[i][0] + "') no-repeat";
+  		// 	document.getElementById("place-img-"+i).style.backgroundSize = "cover";
+  		// }
+
+
+  		// json.forEach((row) => {
+  		// 	const btns = document.getElementById('place-btn');
+  		// 	row.forEach((cell) => {
+  		// 		const place = document.createElement("span");
+  		// 		place.textContent = cell;
+  		// 		btns.appendChild(place);
+  		// 	});
+  		// });
+  	// }
+
+  	document.addEventListener("DOMContentLoaded", () => { dataFeedPlace(); });
+
+</script> -->
+
+<script type="text/javascript">
+	var select = [];
+	function change(cid){
+		var selector = document.getElementById(cid);
+		// selector.getElemntsByClassName('select-box')[0];
+		document.getElementById(cid).style.background = "#00a4ef";
+		document.getElementById(cid).style.color = "#fff";
+		var data = selector.innerHTML;
+		select.push(data);
+		// alert(select);
+
+		// var input = document.getElementById("projects").value;
+		// alert("INPUT:"+input);
+	}
+
+	function submit() {
+		'use strict';
+		 const fs = require('fs');
+
+		var proj = document.getElementById("projects").value;
+		var hobb = document.getElementById("hobbies").value;
+
+		let student = [select,proj,hobb];
+		alert(student);
+		let data = JSON.stringify(student); 
+
+		fs.writeFileSync('data/name.json', data, finished);
+
+                function finished(err)
+                {
+                    console.log('success');
+                }
+	}
+
+	// 'use strict';
+
+</script>
+</html>

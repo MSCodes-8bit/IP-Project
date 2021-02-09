@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sitemap</title>
+	<link rel="stylesheet" type="text/css" href="sitemap.css">
+</head>
+<body>
+	<table id="dataTable">
+		<tr>
+			<th>Page</th>
+			<th>Parent Page</th>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+	function connect() {
+		const request = new XMLHttpRequest();
+		request.open("GET", "sitemap.xml", true);
+		request.onload = () => {
+		const xml = request.responseXML;
+		displayContent(xml);
+	};
+		request.send();
+	}
+	function displayContent(xml) {
+		const data = document.getElementById('dataTable');
+		var x;
+		var xmldoc = xml.getElementsByTagName('site');
+		var a, t, p, pd;
+		for (var j=0; j<xmldoc.length;j++) {
+			x = xmldoc[j].getElementsByTagName('page');
+			console.log(x);
+			for (var i=0;i<x.length;i++) {
+				c = x[i].getElementsByTagName('current');
+				p = x[i].getElementsByTagName('parent');
+				data.innerHTML += '<tr><td>'+c[0].firstChild.nodeValue+'</td><td>'+p[0].firstChild.nodeValue+'</td></tr>';
+		}
+	}
+	}
+	document.addEventListener("DOMContentLoaded", () => { connect(); });
+</script>
+</html>

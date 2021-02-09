@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Welcome To the Registration Page</title>
+	<link rel="stylesheet" href="./css/regstyle.css">
+	<script src="https://kit.fontawesome.com/372c657d15.js" crossorigin="anonymous"></script>
+</head> 
+<body>
+	<div class="box">
+		<img src="img/reg.png" class="usrimg">
+		<h1>Sign-Up</h1>
+		<br>
+	<form action="insert.php" method="post">
+		<p>Email Id</p>
+		<input id="name" type="text" name="username" placeholder="Enter Email Id" required >
+
+		<p>Password</p>
+		<input id="password" type="password" name="password" placeholder="Enter password" required>
+		<br>
+		<p>Gender</p><br>
+		<input class="gender" type="radio" name="gender" value="male" required>Male<br><br>
+		<input class="gender" type="radio" name="gender" value="female" required>Female
+		<br>
+		<input name="submit" type="submit" value="SignUp">
+	</form>
+	<h3 align="center">Follow Us On:- <i class="fab fa-facebook-f"></i>&nbsp; <i class="fab fa-instagram"></i></h3>
+	</div>
+</body>
+</html>

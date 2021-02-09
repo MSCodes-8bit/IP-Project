@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>/JM Q8</title>
+</head>
+<body>
+	<h1>XML Content Display Using AJAX</h1>
+	<div id="data-container"></div>
+</body>
+<script type="text/javascript">
+	function connect() {
+		const request = new XMLHttpRequest();
+		request.open("GET", "ia2.xml", true);
+		request.onload = () => {
+		const xml = request.responseXML;
+		displayContent(xml);
+	};
+		request.send();
+	}
+	function displayContent(xml) {
+		const data_cont = document.getElementById('data-container');
+		var x;
+		var xmldoc = xml.getElementsByTagName('novel');
+		var a, t, p, pd;
+		for (var j=0; j<xmldoc.length;j++) {
+			x = xmldoc[j].getElementsByTagName('book');
+			console.log(x);
+			for (var i=0;i<x.length;i++) {
+				a = x[i].getElementsByTagName('author');
+				t = x[i].getElementsByTagName('title');
+				p = x[i].getElementsByTagName('price');
+				pd = x[i].getElementsByTagName('year');
+				data_cont.innerHTML += '<h1>Author:'+a[0].firstChild.nodeValue+'</h1><h3>Title:'+t[0].firstChild.nodeValue+'<br>Price:'+p[0].firstChild.nodeValue+'<br>Print Year:'+pd[0].firstChild.nodeValue+'</h3>';
+		}
+	}
+	}
+	document.addEventListener("DOMContentLoaded", () => { connect(); });
+</script>
+</html>

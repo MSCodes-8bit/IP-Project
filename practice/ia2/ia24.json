@@ -1,0 +1,26 @@
+[
+	{
+		"student_id":"s123",
+		"student_name" : [
+			{
+				"firstname":"fname1",
+				"lastname":"lname1",
+				"middlename":"mname1"
+			}
+		],
+		"department":"IT",
+		"class":"TE-5"
+	},
+	{
+		"student_id":"s200",
+		"student_name" : [
+			{
+				"firstname":"fname2",
+				"lastname":"lname2",
+				"middlename":"mname2"
+			}
+		],
+		"department":"IT",
+		"class":"TE-5"
+	}
+]

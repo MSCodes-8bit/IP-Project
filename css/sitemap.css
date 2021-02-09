@@ -1,0 +1,38 @@
+* {
+	margin:0;
+	box-sizing: border-box;
+	padding: 0;
+}
+body {
+	overflow-x: hidden;
+}
+table {
+	width: 100%;
+	text-align: left;
+}
+th {
+	font-size: 24px;
+	background: #363636;
+	color: #fff;
+	padding: 10px;
+}
+th:first-child {
+	width: 30%;
+}
+td {
+	font-size: 20px;
+	font-weight: 400;
+	padding: 6px;
+}
+td:nth-child(odd) {
+	border-right: 5px solid #000a;
+}
+tbody:nth-child(even){
+	background: #0003;
+}
+td,th {
+	padding-left: 2rem;
+}
+table, td, th {
+	border-collapse: collapse;
+}

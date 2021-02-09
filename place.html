@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>La Jolla</title>
+  	<meta content="width=device-width, initial-scale=1" name="viewport" />
+  	<link rel="stylesheet" type="text/css" href="css/place-responsive.css">
+	<link rel="stylesheet" href="css/place.css">
+	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+	<header class="nav-bar" id="nav-name">
+	</header>
+	<!-- <div class="nav-decoy" id="menu-block"></div> -->
+	<header id="hero-image">
+	</header>
+
+	<section class="white-play" id="heading">
+		<!-- <div class="help-banner clip-text">Places To Visit</div> -->
+		<div class="btn-container" id="place-btn">
+
+
+		</div>
+	</section>=
+
+	<footer class="last">
+
+	</footer>
+
+</body>
+<script type="text/javascript">
+  	var country;
+  	function dataFeedPlace () {
+  		var ca;
+	  	function getCookie(cname) {
+			  var name = cname + "=";
+			  var decodedCookie = decodeURIComponent(document.cookie);
+			  ca = decodedCookie.split(';');
+			  for(var i = 0; i < ca.length; i++) {
+			    var c = ca[i];
+			    while (c.charAt(0) == ' ') {	
+			      c = c.substring(1);
+			    }
+			    if (c.indexOf(name) == 0) {
+			      return c.substring(name.length, c.length);
+			    }
+			  }
+			  return "";
+			}
+	  	var fileName = getCookie("place");
+	  	country = getCookie("country");
+  		const request = new XMLHttpRequest();
+  		request.open("get", "data/"+fileName+"/"+fileName+".json");
+  		// request.open("get", "data/place-america.json");
+  		request.onload = () => {
+  			// try {
+  				const json = JSON.parse(request.responseText);
+  				populatePlace(json);
+  			// }
+  			// catch (e) {
+  				// console.warn("Error: :_(");
+  			// }
+  		};
+
+  		request.send();
+  	}
+  	function dataFeedPlace2() {
+  		var ca;
+	  	function getCookie(cname) {
+			  var name = cname + "=";
+			  var decodedCookie = decodeURIComponent(document.cookie);
+			  ca = decodedCookie.split(';');
+			  for(var i = 0; i < ca.length; i++) {
+			    var c = ca[i];
+			    while (c.charAt(0) == ' ') {	
+			      c = c.substring(1);
+			    }
+			    if (c.indexOf(name) == 0) {
+			      return c.substring(name.length, c.length);
+			    }
+			  }
+			  return "";
+			}
+	  	var fileName = getCookie("place");
+	  	country = getCookie("country");
+  		const request = new XMLHttpRequest();
+  		request.open("get", "data/"+fileName+"/"+fileName+"-photos.json");
+  		// request.open("get", "data/place-america.json");
+  		request.onload = () => {
+  			// try {
+  				const json2 = JSON.parse(request.responseText);
+  				populatePlace2(json2);
+  			// }
+  			// catch (e) {
+  				// console.warn("Error: :_(");
+  			// }
+  		};
+
+  		request.send();
+  	}
+  	// const loc = window.location.href;
+  	// loc.substring(0, str.lastIndexOf("/"));
+  	// alert(loc);
+  	function populatePlace(json) {
+	  		// console.log(json.length);
+  		const loc = window.location.href;
+  		const path = loc.substring(0, loc.lastIndexOf("/"));
+
+  		const heroImage = document.getElementById('hero-image');
+  		heroImage.innerHTML += '<div class="hero"><div class="nav-decoy" id="menu-block"></div><div class="hero-banner" id="hero-tagline"></div></div>';
+
+  		var heroBack = window.getComputedStyle(document.querySelector ('.hero'), ':before').getPropertyValue('background');
+
+  		// heroBack = 'rgba(0, 0, 0, 0) url("'+path+'/img/'+json[0][0]+'") repeat scroll 0% 0% / cover padding-box border-box;';
+ 		heroBack = 'url("'+path+'/img/'+country+'/'+json[0][1]+'/'+json[0][0]+'");'
+  		// console.log(heroBack);
+
+  		// window.getComputedStyle(document.querySelector ('.hero'), ':before').setProperty("background",""+heroBack+"");
+
+  		document.styleSheets[0].insertRule('.hero:before { background: '+heroBack+'; }', 0);
+
+
+  		const navName = document.getElementById('nav-name');
+  		navName.innerHTML += '<span class="nav-logo">'+json[0][1]+'</span>';
+
+  		const heroTagLine = document.getElementById('hero-tagline');
+  		heroTagLine.innerHTML += '<h1 class="hero-title">'+json[0][2]+'</h1>';
+
+  		const heading = document.getElementById('heading');
+  		heading.innerHTML += '<div class="help-banner clip-text">Make Best Outta '+json[0][1]+' !!</div>';
+
+  		// document.styleSheets[0], "body:after", "background: "+heroBack+"";
+
+  		}
+
+  		function populatePlace2(json2) {
+  			const placeDiv = document.getElementById('place-btn');
+  			//----------------DISPLAYING CARDS
+	  		for (var i = 0; i < json2.length; i++) {
+	  			placeDiv.innerHTML += '<button class="minimal" id="place-btn"><div class="img"><img class="place" id="place-img-'+i+'"><div class="info"><div class="p-name"><span>'+json2[i][2]+'</span></div><div class="desc"><span>'+json2[i][3]+'</span></div></div></div></button>';
+	  			document.getElementById("place-img-"+i).style.background = "url('img/australia/"+json2[i][0]+"/"+json2[i][0]+"-photos/"+json2[i][1]+"') no-repeat";
+	  			document.getElementById("place-img-"+i).style.backgroundSize = "cover";
+	  			document.getElementById("place-img-"+i).style.backgroundPosition = "center top";
+	  		}
+  		}
+
+  	document.addEventListener("DOMContentLoaded", () => { dataFeedPlace(); });
+  	document.addEventListener("DOMContentLoaded", () => { dataFeedPlace2(); });
+
+
+</script>
+</html>

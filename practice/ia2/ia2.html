@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>/JM Q8</title>
+</head>
+<body>
+	<h1>JSON Content Display Using AJAX</h1>
+	<div id="data-container"></div>
+</body>
+<script type="text/javascript">
+	function connect() {
+		const request = new XMLHttpRequest();
+		request.open("get", "ia2.json");
+		request.onload = () => {
+		const json = JSON.parse(request.responseText);
+		displayContent(json);
+	};
+		request.send();
+	}
+	function displayContent(json) {
+		const data_cont = document.getElementById('data-container');
+		for (var i=0; i<json.length;i++) {
+			data_cont.innerHTML += '<h1>Author:'+json[i].author+'</h1><h3>Title:'+json[i].title+'<br>Price:'+json[i].price+'<br>Print Year:'+json[i].print_date+'</h3>';
+		}
+	}
+	// document.addEventListener("DOMContentLoaded", () => { connect(); })
+	document.addEventListener("DOMContentLoaded", () => { connect(); });
+</script>
+</html>

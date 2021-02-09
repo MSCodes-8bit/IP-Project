@@ -1,0 +1,20 @@
+[
+	{
+		"author": "Author_1",
+		"title": "Book_1",
+		"price": "Rs.240",
+		"print_year": "2017"
+	},
+	{
+		"author": "Author_2",
+		"title": "Book_2",
+		"price": "Rs.320",
+		"print_year": "2019"
+	},
+	{
+		"author": "Author_2",
+		"title": "Book_2",
+		"price": "Rs.180",
+		"print_year": "2018"
+	}
+]

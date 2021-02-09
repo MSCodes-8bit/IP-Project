@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.main-container {
+	display: block;
+	height: 150vh;
+	width: 100vw;
+	justify-content: center;
+}
+.contact {
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 20%;
+	background: url("../mount1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+	background-attachment: fixed;
+}
+.contact span {
+	color: #fffc;
+	font-family: "century gothic";
+	font-size: 3rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 3rem
+}
+.address {
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 15%;
+	/*margin: 2.5% 0;*/
+	color: #363636;
+	font-family: "century gothic";
+	font-size: 1.5rem;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+.phone {
+	position: relative;
+	width: 100%;
+	height: 10%;
+	color: #363636;
+	font-family: "century gothic";
+	font-size: 1.5rem;
+	text-align: center;
+}
+.map-pos {
+	display: flex;
+	height: 40%;
+	width: 80%;
+	margin: 0 10%;
+}
+.social {
+	display: block;
+	justify-content: center;
+	width: 100%;
+	padding: 0 40%;
+	height: 5%;
+}
+.social-container {
+	display: flex;
+	justify-content: space-around;
+	font-size: 2rem;
+	color: rgba(0,0,0,0,8);
+	padding: 1rem;
+}
+.icon {
+	/*color: #363636;*/
+	transition: all ease 0.3s;
+}
+.icon:hover {
+	transform: scale(1.5);
+}

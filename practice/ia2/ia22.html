@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IA2 Prac</title>
+</head>
+<body>
+	<h1>PRACTICE AJAX</h1>
+	<div id="data-container"></div>
+</body>
+<script type="text/javascript">
+	function connect() {
+		const request = new XMLHttpRequest();
+		request.open("get", "ia2.json");
+		request.onload = () => {
+			const json = JSON.parse(request.responseText);
+			content_feed(json);
+		};
+		request.send();
+	}
+	function content_feed(json) {
+		const data = document.getElementById("data-container");
+		for(var i=0;i<json.length;i++) {
+			data.innerHTML += '<h1>Author:'+json[i].author+'<h1><h3>Title: '+json[i].title+'<br>Price: '+json[i].price+'<br>Print Year: '+json[i].print_year+'</h3>';
+		}
+	}
+	document.addEventListener("DOMContentLoaded", () => { connect(); });
+</script>
+</html>

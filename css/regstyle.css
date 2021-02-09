@@ -1,0 +1,83 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;
+	background-image: url(../img/back.jpg);
+	background-size: cover;
+}
+
+.box{
+	background: rgba(0,0,0,0.3);
+	width: 320px;
+	height: 440px;
+	top: 16%;
+	left: 38%;
+	transform: translate(-50% -50%);
+	box-sizing: absolute;
+	position: absolute;
+	padding: 70px 30px;
+	text-align: left;
+	color: white;
+}
+.box p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: white;
+	cursor: default;
+}
+
+.box input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.gender{
+	position: absolute;
+	text-align: left;
+	margin-left: -100px;
+}
+
+
+.box input[type="text"],
+.box input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #FFFFFF;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #FFFFFF;
+	font-size: 16px;
+	
+}
+::placeholder{
+	color: #B0B0B0
+}
+
+.box input[type="submit"],
+.box input[type="button"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	margin-top: 30px;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 50px;
+}
+
+.usrimg{
+	width: 300px;
+	height: 250px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: calc(-260px/2);
+	left: 10%;
+}
+h2{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+}

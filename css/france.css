@@ -1,0 +1,17 @@
+.hero::before {
+	content: '';
+	min-height: 100vh;
+	width: 100vw;
+	top: -8vh;
+	left: 0;
+	background: url("../img/france.jpg");
+	filter: brightness(0.6);
+	position: absolute;
+	z-index: -1;
+	transform: translateZ(-1px) scale(2);
+	background-size: cover;
+	background-position: center;
+	-webkit-animation: fadein 0.5s;
+	animation: fadein 0.5s;
+	/*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);*/
+}

@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Malibu Club",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus vestibulum elit,"
+	},
+	{
+		"name": "This Beach",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus vestibulum elit,"
+	},
+	{
+		"name": "That Beach",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus vestibulum elit,"
+	},
+	{
+		"name": "La Holla",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus vestibulum elit,"
+	},
+	{
+		"name": "Some Other Place",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus vestibulum elit,"
+	}
+]

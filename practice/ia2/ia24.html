@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>/JM Q8</title>
+	<style type="text/css">
+		table, th, td {
+			border: solid 1px #000;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+		td {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table style="width:100%" id="dataTable">
+		<tr>
+			<th>Student ID</th>
+			<th>Student Name</th>
+			<th>Department</th>
+			<th>Class</th>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+	function connect() {
+		const request = new XMLHttpRequest();
+		request.open("get", "ia24.json");
+		request.onload = () => {
+			const json = JSON.parse(request.responseText);
+			addData(json);
+		};
+		request.send();
+	}
+	function addData(json) {
+		const data = document.getElementById("dataTable");
+		for (var i=0;i<json.length;i++){
+			data.innerHTML += '<tr><td>'+json[i].student_id+'</td><td>'+json[i].student_name[0].lastname+' '+json[i].student_name[0].firstname+' '+json[i].student_name[0].middlename+'</td><td>'+json[i].department+'</td><td>'+json[i].class+'</td></tr>';
+		}
+	}
+	document.addEventListener("DOMContentLoaded", () => { connect(); });
+</script>
+</html>
